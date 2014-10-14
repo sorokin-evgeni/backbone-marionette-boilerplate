@@ -1,0 +1,6 @@
+{
+    "name": "backbone-mationette-boilerplate",
+    "dependencies": {
+        "backbone.marionette": "2.2.1"
+    }
+}

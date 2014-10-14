@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <% _.each(cssList, function(fileName) { %>
+    <link rel="stylesheet" href="css/<%= fileName %>"/>
+    <% }); %>
+</head>
+<body>
+
+<% _.each(templates, function(template) { %>
+<script type="text/template" id="<%= template.name %>">
+    <%= template.content %>
+</script>
+<% }); %>
+
+<% _.each(jsList, function(script) { %>
+<script type="text/javascript" src="js/<%= script %>"></script>
+<% }); %>
+
+</body>
+</html>
