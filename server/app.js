@@ -4,7 +4,7 @@
 var express = require('express'),
     app = express(),
     grunt = require('grunt'),
-    indexGenerator = require('./index-generator.js'),
+    indexGenerator = require('./template-generator.js'),
     http = require('http'),
     path = require('path');
 
@@ -17,9 +17,29 @@ if (config.enviroment === 'dev') {
     app.use(express.static(path.join(__dirname, '..', 'dist', 'public')));
 }
 
+app.get('/api/user/(:id)?', function(req, res){
+    var userId = req.params.id;
 
-app.get('/', function(req, res){
-    indexGenerator.generate(function(html) {
+    if (!userId) {
+        res.json({
+            login: 'terminator',
+            name: 'Arnoldo Shunzenfegeld',
+            language: 'ru',
+            id: '1'
+        });
+        return;
+    }
+
+    res.json({
+        id: req.params.id,
+        login: 'randomuser',
+        name: 'Random',
+        language: 'en'
+    });
+});
+
+app.get('/*', function(req, res){
+    indexGenerator.index(function(html) {
         res.send(html);
     });
 });

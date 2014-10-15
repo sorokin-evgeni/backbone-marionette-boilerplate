@@ -1,0 +1,4 @@
+define(function() {
+    <%= content %>
+    return i18n;
+});

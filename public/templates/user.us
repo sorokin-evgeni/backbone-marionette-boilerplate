@@ -1,0 +1,3 @@
+<ul>
+    localized text: <%= i18n('chat-page-title', {query_text: 'Query text'}) %>
+</ul>

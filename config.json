@@ -2,12 +2,13 @@
     "enviroment": "prod",
     "templateEngine": "underscore",
     "templateExt": ".us",
+    "tankerUrl": "http://tanker-api.tools.yandex.net:3000",
     "staticSrc": {
         "base": "public",
         "css": "public/css",
+        "less": "public/less",
         "js": "public/js",
-        "templates": "public/templates",
-        "includeModules": ["js/app.js", "js/app/modules/user"]
+        "templates": "public/templates"
     },
     "staticDist": {
         "tmpFolder": "dist/tmp",
