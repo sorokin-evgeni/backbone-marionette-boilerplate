@@ -77,36 +77,6 @@ module.exports = function(grunt) {
         });
     });
 
-    // Tanker:
-    var languages = ['en', 'ru'];
-    function downloadLocalization(lang, callback) {
-        http.get(config.tankerUrl + "/tools/generate/i18n.xml?project-id=ang-chat&language=" + lang + "&keyset-id=main&path=i18n&type=js", function(res) {
-
-            res.on('data', function (chunk) {
-                tplGenerator.i18n(lang, chunk+'', function(code) {
-                    [config.staticSrc.js + '/i18n/' + lang + '.js', config.staticDist.js + '/i18n/' + lang + '.js'].forEach(function(filePath) {
-                        grunt.file.exists(filePath) && grunt.file.delete(filePath);
-                        grunt.file.write(filePath, code);
-                    });
-                    callback && callback();
-                });
-            });
-        }).on('error', function(e) {
-            console.log("Got error: " + e.message);
-
-        });
-    }
-    grunt.registerTask('tanker', 'Download tanker localization and save it as AMD module', function() {
-        var done = this.async();
-
-        var lngIndex = 0;
-        function downloadCallback() {
-            lngIndex++;
-            languages[lngIndex] ? downloadLocalization(languages[lngIndex], downloadCallback) : done();
-        }
-        downloadLocalization(languages[lngIndex], downloadCallback);
-    });
-
     // Genetate and save index.html
     grunt.registerTask('index', 'Generate index.html', function() {
         var done = this.async();
@@ -127,7 +97,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'less', 'cssmin', 'tanker', 'requirejs', 'jst', 'uglify', 'index']);
+    grunt.registerTask('default', ['clean', 'less', 'cssmin', 'requirejs', 'jst', 'uglify', 'index']);
 
 
 };

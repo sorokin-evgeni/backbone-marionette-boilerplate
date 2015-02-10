@@ -1,14 +1,15 @@
 /**
  * Created by 40in on 08.10.14.
  */
-define(['app', 'marionette', 'js/app/routing-module'], function(app, Marionette, RoutingModule) {
+define(['app', 'marionette', 'js/app/routing-module', 'view/text-view'], function(app, Marionette, RoutingModule, TextView) {
 
     var HomeModule = RoutingModule.extend({
 
         startWithParent: false,
 
         routesList: {
-            'home': 'homeAction'
+            'home': 'homeAction',
+            '': 'homeAction'
         },
 
         initialize: function() {
@@ -26,6 +27,10 @@ define(['app', 'marionette', 'js/app/routing-module'], function(app, Marionette,
 
         homeAction: function() {
             console.log('homeAction');
+            var textView = new TextView({
+                text: 'home page'
+            });
+            app.content(textView.render());
         }
 
     });

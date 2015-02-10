@@ -1,8 +1,7 @@
 {
-    "enviroment": "prod",
+    "enviroment": "dev",
     "templateEngine": "underscore",
     "templateExt": ".us",
-    "tankerUrl": "http://tanker-api.tools.yandex.net:3000",
     "staticSrc": {
         "base": "public",
         "css": "public/css",

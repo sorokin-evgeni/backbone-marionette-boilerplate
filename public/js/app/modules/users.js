@@ -1,7 +1,7 @@
 /**
  * Created by 40in on 08.10.14.
  */
-define(['app', 'marionette', 'js/app/routing-module', 'view/user-view'], function(app, Marionette, RoutingModule, UserView) {
+define(['app', 'marionette', 'js/app/routing-module', 'view/text-view'], function(app, Marionette, RoutingModule, TextView) {
 
     var UsersModule = RoutingModule.extend({
 
@@ -26,8 +26,10 @@ define(['app', 'marionette', 'js/app/routing-module', 'view/user-view'], functio
 
         listAction: function() {
             console.log('listAction');
-            var userView = new UserView();
-            app.content(userView.render());
+            var textView = new TextView({
+                text: 'users page'
+            });
+            app.content(textView.render());
         }
 
     });

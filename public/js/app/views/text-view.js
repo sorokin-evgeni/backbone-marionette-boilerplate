@@ -5,7 +5,13 @@ define(['marionette'], function(Marionette) {
 
     var UserView = Marionette.ItemView.extend({
 
-        template: '#user'
+        template: '#text',
+
+        serializeData: function() {
+            return {
+                text: this.options.text || ''
+            }
+        }
 
     });
 

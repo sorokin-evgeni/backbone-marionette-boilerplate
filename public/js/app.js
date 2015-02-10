@@ -46,21 +46,12 @@ define('app', ['marionette', 'backbone', 'jquery'], function(Marionette, Backbon
     });
 
     app.on('start', function(lng) {
-        //define global helper
-        window.i18n = function(key, options) {
-            var value = lng['ang-chat']['main'][key];
-            return $.isFunction(value) ? value(options) : value;
-        };
 
         if (!Backbone.history) return;
         require(['js/app/menu', 'module/users', 'module/home'], function(menu) {
             app.Header.show(menu);
             Backbone.history.start({pushState: true});
         });
-//        require(['app/menu', 'module/users', 'module/home'], function(menu) {
-//            app.Header.show(menu);
-//            Backbone.history.start({pushState: true});
-//        });
     });
 
     $(document).click(function(event) {
