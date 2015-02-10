@@ -1,7 +1,6 @@
 {
-    "name": "backbone-mationette-boilerplate",
+    "name": "backbone-marionette-boilerplate",
     "dependencies": {
-        "backbone.marionette": "2.2.1",
-        "less.js": "1.7.5"
+        "backbone.marionette": "2.2.1"
     }
 }
