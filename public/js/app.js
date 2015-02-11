@@ -45,8 +45,7 @@ define('app', ['marionette', 'backbone', 'jquery'], function(Marionette, Backbon
         }
     });
 
-    app.on('start', function(lng) {
-
+    app.on('start', function() {
         if (!Backbone.history) return;
         require(['js/app/menu', 'module/users', 'module/home'], function(menu) {
             app.Header.show(menu);

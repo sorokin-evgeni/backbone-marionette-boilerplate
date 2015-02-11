@@ -44,13 +44,3 @@ exports.index = function(success, enviroment) {
         success(html);
     });
 };
-
-exports.i18n = function(lng, content, success) {
-    cons.underscore('server/templates/i18n.us', {
-        lng: lng,
-        content: content
-    }, function(err, html){
-        if (err) throw err;
-        success(html);
-    });
-};

@@ -33,16 +33,6 @@ requirejs.config({
     }
 });
 
-require(['app', 'model/user'], function(app, User) {
-
-    var currentUser = new User();
-    currentUser.on('sync', function() {
-        app.currentUser = currentUser;
-        var language = app.currentUser.get('language') || 'en';
-        require(['js/i18n/' + language], function(lng) {
-            app.start(lng);
-        });
-    });
-    currentUser.fetch();
-
+require(['app'], function(app) {
+    app.start();
 });

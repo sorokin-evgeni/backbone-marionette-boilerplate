@@ -2,6 +2,7 @@
     "name": "backbone-marionette-boilerplate",
     "version": "0.0.1",
     "description": "Platform for building SPA using Backbone and Marionette",
+    "licence": "MIT",
     "dependencies": {
         "express": "4.x",
         "grunt": "0.4.5",
@@ -14,12 +15,8 @@
         "consolidate" : "0.10.0",
         "underscore": "1.7.0"
     },
-    "jam": {
-        "packageDir": "public/js/lib",
-        "baseUrl": "public",
-        "dependencies": {
-            "jquery": "2.0.0",
-            "backbone.marionette": "1.0.3"
-        }
+    "author": {
+        "name": "Evgeny Sorokin",
+        "email": "sorevg@gmail.com"
     }
 }
