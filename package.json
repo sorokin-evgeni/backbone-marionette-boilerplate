@@ -13,7 +13,8 @@
     "grunt-contrib-less": "0.11.4",
     "grunt-contrib-watch": "0.6.1",
     "consolidate": "0.10.0",
-    "underscore": "1.7.0"
+    "underscore": "1.7.0",
+    "grunt-autoprefixer": "^3.0.0"
   },
   "author": "Evgeny Sorokin <sorevg@gmail.com>",
   "main": "Gruntfile.js",

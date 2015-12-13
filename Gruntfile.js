@@ -59,6 +59,11 @@ module.exports = function(grunt) {
                 files: config.staticSrc.less + '/*.less',
                 tasks: ['less']
             }
+        },
+        autoprefixer: {
+            compile: {
+                src: config.staticDist.css + '/main.css'
+            }
         }
 
     });
@@ -95,9 +100,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jst');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'less', 'cssmin', 'requirejs', 'jst', 'uglify', 'index']);
+    grunt.registerTask('default', ['clean', 'less', 'cssmin', 'autoprefixer', 'requirejs', 'jst', 'uglify', 'index']);
 
 
 };
